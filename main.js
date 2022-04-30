@@ -26,10 +26,7 @@ canvas.addEventListener("touchstart", my_touchstart);
 function my_touchstart(e){
     color = document.getElementById("colorinput").value;
     width_of_line = document.getElementById("widthinput").value;
-    lasttouchx=e.touches[0].clientX-canvas.offsetLeft;
-    lasttouchy=e.touches[0].clientY-canvas.offsetTop;
-
-
+  
 }
 
 canvas.addEventListener("touchmove", my_touchmove);
@@ -46,6 +43,9 @@ ctx.lineWidth=width_of_line;
 ctx.moveTo (lasttouchx,lasttouchy);
 ctx.lineTo(currenttouchx,currenttouchy);
 ctx.stroke();
+lasttouchx=e.touches[0].clientX-canvas.offsetLeft;
+lasttouchy=e.touches[0].clientY-canvas.offsetTop;
+
 
 
 }
